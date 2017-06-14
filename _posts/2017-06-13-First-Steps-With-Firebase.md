@@ -164,22 +164,4 @@ Dans les deux exemples suivants, nous récupérions l'ensemble de l'objet via l'
 Nous avons parcouru une bonne partie de l'API de firebase. Il nous manque la possibilité de ne pouvoir récupérer qu'un subset des données (avec startAt et endAt) et la possibilité de faire des transactions. L'API de firebase est très simple à prendre en main, le plus compliqué restant de bien architecturer ses données.
 Dans l'article suivant, nous verrons comment utiliser l'authentification de Firebase et la possibilité de définir de manière fine des droits en lecture et écriture sur chacune des clés.
 
-{% if page.comments %}
-<div id="disqus_thread"></div>
-<script>
-
-var disqus_config = function () {
-this.page.url = {{ page.url }};  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '{{ site.disqus_shortname }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://exploratorycoding.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-{% endif %}
+{% include disqus.html %}
